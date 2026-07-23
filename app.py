@@ -2,7 +2,7 @@ import os
 from flask import Flask, jsonify, Response
 from pymongo import MongoClient
 
-MONGO_URI = os.environ["mongodb+srv://vishnumdot67_db_user:9IZOH90Zg3K5Xkyv@cluster0.xwzo4bv.mongodb.net/?appName=Cluster0"]
+MONGO_URI = os.environ["MONGO_URL"]
 # Must match the DB_NAME used by the bot service, so tokens created by the
 # bot are visible here.
 DB_NAME = os.environ.get("DB_NAME", "campus_post_bot")
