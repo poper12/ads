@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: adsgram-landing
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT
+    envVars:
+      - key: MONGO_URI
+        sync: false
+      - key: DB_NAME
+        value: campus_post_bot
+      - key: BRAND_NAME
+        value: Campus Post
+      - key: PYTHON_VERSION
+        value: 3.11.9
